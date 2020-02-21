@@ -1,5 +1,12 @@
-<h2><%= @cocktail.name %></h2>
+<div class="container">
+
+<h2 class="text-center"><%= @cocktail.name %></h2>
+<p><%= link_to 'add a dose', new_cocktail_dose_path(@cocktail) %></p>
+<p><%= link_to 'go back', cocktails_path %></p>
+<div class="d-flex justify-content-center">
 <ul>
+<%= cl_image_tag @cocktail.photo.key, height: 300, crop: :fill %>
+<p>How to make a <%= @cocktail.name %>:</p>
 <% @cocktail.doses.each do |dose| %>
   <li> <%= dose.description %> - <%= dose.ingredient.name %>
   <%= link_to 'x', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link"  %>
@@ -7,5 +14,5 @@
 <% end %>
 </ul>
 
-<p><%= link_to 'add a dose', new_cocktail_dose_path(@cocktail) %></p>
-<p><%= link_to 'go back', cocktails_path %></p>
+</div>
+</div>

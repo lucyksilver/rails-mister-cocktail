@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  color: white;
+  background-color: #23414c;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white
+}
