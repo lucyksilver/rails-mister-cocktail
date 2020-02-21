@@ -7,11 +7,11 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
-  def create
+  def new
     @cocktail = Cocktail.new
   end
 
-  def new
+  def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
