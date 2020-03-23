@@ -1,1 +1,7 @@
 <%= link_to 'home', root_path  %>
+
+<% @user.cocktails.each do |cocktail| %>
+<li><%= cocktail.name %>
+<%= cocktail.doses.first.description %>
+<%= cl_image_tag cocktail.photo.key, height: 150, width: 150 %></li>
+<% end %>
