@@ -17,3 +17,10 @@ Ingredient.create(name: "gin")
 Ingredient.create(name: "egg white")
 
 user = User.create!(email: "test1@test.com", password:"123123")
+
+
+Cocktail.all.each do |cocktail|
+  Ingredient.all.sample(4).each do |ingredient|
+    Dose.create!(cocktail_id: cocktail.id, ingredient_id: ingredient.id )
+  end
+end
